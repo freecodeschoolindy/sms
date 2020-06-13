@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App.vue Renders correctly 1`] = `
+<div id="app">
+  <div id="nav">
+    <a>Home</a> |
+    <a>About</a>
+  </div>
+  <router-view-stub name="default"></router-view-stub>
+</div>
+`;

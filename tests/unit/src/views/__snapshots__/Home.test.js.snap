@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home.vue Renders correctly 1`] = `
+<div class="home">
+  <helloworld-stub></helloworld-stub>
+</div>
+`;

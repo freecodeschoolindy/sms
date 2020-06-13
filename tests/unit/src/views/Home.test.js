@@ -1,8 +1,8 @@
-import HelloWorld from '@/components/HelloWorld.vue';
+import Home from '@/views/Home.vue';
 
 import testHelpers from '@@/testHelpers.js';
 
-describe('HelloWorld.vue', () => {
+describe('Home.vue', () => {
   let localVue;
   let store;
   let setup;
@@ -16,7 +16,7 @@ describe('HelloWorld.vue', () => {
   });
 
   test('Renders correctly', async () => {
-    const wrapper = await testHelpers.shallowMountWrapper(HelloWorld, {
+    const wrapper = await testHelpers.shallowMountWrapper(Home, {
       localVue,
       store
     });
