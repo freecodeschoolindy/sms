@@ -21,3 +21,5 @@ yarn-lock.json
 *.njsproj
 *.sln
 *.sw?
+
+tests/unit/coverage
