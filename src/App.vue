@@ -1,8 +1,18 @@
 <template>
   <div id="app">
     <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <template v-for="(link, linkIndex) in links">
+        <router-link
+          v-text="link.title"
+          :to="link.path"
+          :key="'link' + linkIndex"
+        />
+        <span
+          v-if="linkIndex < links.length - 1"
+          v-text="' | '"
+          :key="'|' + linkIndex"
+        ></span>
+      </template>
     </div>
     <router-view />
   </div>
@@ -10,6 +20,20 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  data: function () {
+    return {
+      links: [
+        {
+          title: 'Home',
+          path: '/'
+        },
+        {
+          title: 'About',
+          path: '/about'
+        }
+      ]
+    };
+  }
 };
 </script>
