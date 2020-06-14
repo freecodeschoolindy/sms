@@ -2,7 +2,7 @@
 @charset "utf-8";                    // Character type for the stylesheet
 
 // ITCSS: SETTINGS
-// @import "_var.sass";                 // Sass Variables - Does not effect page, but other Sass files reference this file.
+@import "_var.sass";                 // Sass Variables - Does not effect page, but other Sass files reference this file.
 
 
 // ITCSS: TOOLS
@@ -23,7 +23,7 @@
 
 // ITCSS: GENERIC (ELEMENTS/BASE)
 @import "_base.sass";                // h1, h2, h3, p, etc.
-// @import "_layout.sass";              // General layout classes, like .col-xs-4
+@import "_layout.sass";              // General layout classes, like .col-xs-4
 // @import "_utility.sass";             // Utility classes, like .wrapper or .text-center
 
 
