@@ -8,7 +8,7 @@ const ALLOWED_GROUPS = helpers.ALLOWED_GROUPS;
 import AccessDenied from '@/views/AccessDenied.vue';
 import Home from '@/views/Home.vue';
 import About from '@/views/About.vue';
-import UsersList from '@/views/Users.vue';
+import UsersList from '@/views/UsersList.vue';
 
 Vue.use(VueRouter);
 
@@ -49,7 +49,7 @@ export const routes = [
   },
   {
     path: '/users',
-    name: 'Users',
+    name: 'UsersList',
     component: UsersList,
     meta: {
       groups: ALLOWED_GROUPS

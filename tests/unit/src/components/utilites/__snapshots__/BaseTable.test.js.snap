@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BaseTable.vue Renders correctly 1`] = `
+<div>
+  <vue-good-table-stub theme mode="local" styleclass="vgt-table bordered" columns rows responsive="true" groupoptions="[object Object]" selectoptions="[object Object]" sortoptions="[object Object]" paginationoptions="[object Object]" searchoptions="[object Object]"></vue-good-table-stub>
+</div>
+`;

@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AccessDenied.vue Renders correctly 1`] = `
+<div>
+  <h1>AccessDenied</h1>
+</div>
+`;

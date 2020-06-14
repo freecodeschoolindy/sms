@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UsersList.vue Renders correctly 1`] = `
+<div>
+  <h1>Users</h1>
+  <base-table-stub columndata="[object Object],[object Object]" rowdata></base-table-stub>
+</div>
+`;

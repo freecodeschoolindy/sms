@@ -12,7 +12,7 @@
 import BaseTable from '@/components/utilities/BaseTable.vue';
 
 export default {
-  name: 'Users',
+  name: 'UsersList',
   components: {
     BaseTable
   },
