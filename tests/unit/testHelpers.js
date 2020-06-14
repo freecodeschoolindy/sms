@@ -30,15 +30,9 @@ const helpers = {
   setupStore: function () {
     return new Store(_cloneDeep(storeConfig));
   },
-  setupPermissions: function (store, permissions) {
-    store.state.currentUser = {
-      name: 'Jane Doe',
-      permissions: {}
-    };
-
-    for (let permission of permissions) {
-      store.state.currentUser.permissions[permission] = true;
-    }
+  setupPermissions: function (store, permission) {
+    store.state.currentUser = store.state.currentUser || {};
+    store.state.currentUser.groups = permission;
   },
   mountWrapper: async function (component, wrapperOptions, options) {
     const stubs = wrapperOptions?.stubs;
@@ -78,6 +72,8 @@ const helpers = {
       stubs: { 'router-link': RouterLinkStub },
       ...options
     });
+
+    await flushPromises();
 
     return wrapper;
   }
