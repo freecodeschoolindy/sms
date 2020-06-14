@@ -84,19 +84,21 @@ export function loadUser (to, from, next) {
       lastName: 'Doe',
       preferredName: 'Janey',
       email: 'janedoe@example.com',
-      group: 'student',
+      groups: 'student',
       id: 20
     };
-    if (!ALLOWED_GROUPS.includes(currentUser.group)) {
-      currentUser.group = 'unassigned';
+
+    if (!ALLOWED_GROUPS.includes(currentUser.groups)) {
+      currentUser.groups = 'unassigned';
     }
+
     store.commit('setCurrentUser', currentUser);
   }
   next();
 }
 
 export function checkRoutePermissions (to, from, next) {
-  if (!to.meta.groups.includes(store.state.currentUser.group)) {
+  if (!to.meta.groups.includes(store.state.currentUser.groups)) {
     store.commit('setLastURLRequested', to.path);
     next('/access-denied');
   } else {
