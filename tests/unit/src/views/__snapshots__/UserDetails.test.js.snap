@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserDetails.vue Renders correctly 1`] = `
+<div>
+  <h1>Student Profile</h1>
+  <h2>Publicly visible:</h2>
+  <fieldset class="half">
+    <label for="firstName">First Name:</label>
+    <input id="firstName">
+  </fieldset>
+  <fieldset class="half">
+    <label for="lastName">Last Name:</label>
+    <input id="lastName">
+  </fieldset>
+  <fieldset class="half">
+    <label for="preferredName">Preferred Name:</label>
+    <input id="preferredName">
+  </fieldset> <pre>  Public Profile: Visible to others logged in, maybe to those not logged in?
+    Preferred Name
+    GitHub Username
+    Codepen Username
+    Certificates/Badges
+
+  Private Profile: Visible to only the user and organizers/admins
+    FreeCodeCamp.org progress page url: freecodecamp.org/codecafecentral
+    Email
+    Discord Name
+    Phone
+    Attendenance (not editable by students)
+    List of labs:
+      Link to the lab starter
+      input field for a link to their completed version
+  </pre>
+</div>
+`;
