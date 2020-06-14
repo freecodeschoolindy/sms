@@ -4,54 +4,77 @@
 
     <h2>Publicly visible:</h2>
 
-    <fieldset class="half">
-      <label for="firstName">First Name:</label>
-      <input v-model="user.firstName" id="firstName" />
-    </fieldset>
-
-    <fieldset class="half">
-      <label for="lastName">Last Name:</label>
-      <input v-model="user.lastName" id="lastName" />
-    </fieldset>
-
-    <fieldset class="half">
-      <label for="preferredName">Preferred Name:</label>
-      <input v-model="user.preferredName" id="preferredName" />
-    </fieldset>
-
-    <pre>
-    Public Profile: Visible to others logged in, maybe to those not logged in?
-      Preferred Name
-      GitHub Username
-      Codepen Username
-      Certificates/Badges
-
-    Private Profile: Visible to only the user and organizers/admins
-      FreeCodeCamp.org progress page url: freecodecamp.org/codecafecentral
-      Email
-      Discord Name
-      Phone
-      Attendenance (not editable by students)
-      List of labs:
-        Link to the lab starter
-        input field for a link to their completed version
-    </pre>
-
+    <base-text-field
+      v-for="field in fields"
+      v-model="user[field.id]"
+      :id="field.id"
+      :label="field.label"
+      :placeholder="field.placeholder"
+      :key="field.id"
+    />
 
   </div>
 </template>
 
 <script>
+import BaseTextField from '@/components/utilities/BaseTextField.vue';
+
 export default {
   name: 'UserDetails',
+  components: {
+    BaseTextField
+  },
   data: function () {
     return {
       userType: 'Student',
       user: {
         firstName: 'Jane',
         preferredName: 'Janey',
-        lastName: 'Doe'
-      }
+        lastName: 'Doe',
+        codepenUsername: 'jdoe',
+        githubUsername: 'jdoe'
+      },
+      fields: [
+        {
+          id: 'firstName',
+          label: 'First Name',
+          placeholder: 'Richard'
+        },
+        {
+          id: 'lastName',
+          label: 'Last Name',
+          placeholder: 'Sanchez'
+        },
+        {
+          id: 'preferredName',
+          label: 'Preferred Name',
+          placeholder: 'Rick'
+        },
+        {
+          id: 'githubUsername',
+          label: 'GitHub Username',
+          placeholder: 'rsanchez',
+        },
+        {
+          id: 'codepenUsername',
+          label: 'CodePen Username',
+          placeholder: 'rsanchez',
+        }
+        /*
+          Public Profile: Visible to others logged in, maybe to those not logged in?
+            Certificates/Badges
+
+          Private Profile: Visible to only the user and organizers/admins
+            FreeCodeCamp.org progress page url: freecodecamp.org/codecafecentral
+            Email
+            Discord Name
+            Phone
+            Attendenance (not editable by students)
+            List of labs:
+              Link to the lab starter
+              input field for a link to their completed version
+        */
+      ]
     };
   },
   methods: {},
