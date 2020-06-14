@@ -33,6 +33,10 @@ export default {
         {
           title: 'About',
           path: '/about'
+        },
+        {
+          title: 'Users',
+          path: '/users'
         }
       ]
     };

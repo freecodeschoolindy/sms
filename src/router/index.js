@@ -1,10 +1,14 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+
+import store from '@/store/index.js';
+import helpers from '@/helpers/index.js';
 const ALLOWED_GROUPS = helpers.ALLOWED_GROUPS;
 
 import AccessDenied from '@/views/AccessDenied.vue';
 import Home from '@/views/Home.vue';
 import About from '@/views/About.vue';
+import UsersList from '@/views/Users.vue';
 
 Vue.use(VueRouter);
 
@@ -41,6 +45,14 @@ export const routes = [
         ...ALLOWED_GROUPS,
         'unassigned'
       ]
+    }
+  },
+  {
+    path: '/users',
+    name: 'Users',
+    component: UsersList,
+    meta: {
+      groups: ALLOWED_GROUPS
     }
   }
 ];

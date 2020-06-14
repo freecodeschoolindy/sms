@@ -6,8 +6,12 @@ exports[`App.vue Renders correctly 1`] = `
     <a>Home</a>
     <span> | </span>
     <a>About</a>
+    <span> | </span>
+    <a>Users</a>
     <!---->
   </div>
-  <router-view-stub name="default"></router-view-stub>
+  <div class="wrapper">
+    <router-view-stub name="default"></router-view-stub>
+  </div>
 </div>
 `;
