@@ -6,7 +6,7 @@
 
 
 // ITCSS: TOOLS
-// @import "_mixins.sass";              // Sass Mixins - Does not effect page, but other Sass files reference this file.
+@import "_mixins.sass";              // Sass Mixins - Does not effect page, but other Sass files reference this file.
 // @import "_functions.sass";           // Sass Functions - Does not effect page, but other Sass files reference this file.
 
 
