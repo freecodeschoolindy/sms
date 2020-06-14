@@ -8,10 +8,10 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint --no-fix",
     "fix": "vue-cli-service lint --fix",
+    "sasslint": "sass-lint -c .sass-lint.yml -v -f table",
     "test": "npm run test:unit",
     "test:unit": "vue-cli-service test:unit --coverage",
-    "unit": "jest --config jest.config.js --coverage --runInBand",
-    "validate": "npm run lint && npm t"
+    "validate": "npm run lint && npm run sasslint && npm t"
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -39,8 +39,11 @@
     "jest-environment-jsdom-global": "^2.0.2",
     "jest-serializer-vue-tjw": "^3.14.0",
     "lodash.clonedeep": "^4.5.0",
+    "normalize.css": "^8.0.1",
     "sass": "^1.26.5",
+    "sass-lint": "^1.13.1",
     "sass-loader": "^8.0.2",
+    "tjw-sasslint-rules": "^2.1.0",
     "vue-template-compiler": "^2.6.11"
   },
   "engines": {
