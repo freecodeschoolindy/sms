@@ -9,6 +9,7 @@ import AccessDenied from '@/views/AccessDenied.vue';
 import Home from '@/views/Home.vue';
 import About from '@/views/About.vue';
 import UsersList from '@/views/UsersList.vue';
+import UserDetails from '@/views/UserDetails.vue';
 
 Vue.use(VueRouter);
 
@@ -54,6 +55,15 @@ export const routes = [
     meta: {
       groups: ALLOWED_GROUPS
     }
+  },
+  {
+    path: '/users/:id',
+    name: 'UserDetails',
+    component: UserDetails,
+    meta: {
+      groups: ALLOWED_GROUPS
+    },
+    props: true
   }
 ];
 
@@ -74,7 +84,7 @@ export function loadUser (to, from, next) {
       lastName: 'Doe',
       preferredName: 'Janey',
       email: 'janedoe@example.com',
-      group: 'asdf',
+      group: 'student',
       id: 20
     };
     if (!ALLOWED_GROUPS.includes(currentUser.group)) {
@@ -86,7 +96,6 @@ export function loadUser (to, from, next) {
 }
 
 export function checkRoutePermissions (to, from, next) {
-  console.log(to);
   if (!to.meta.groups.includes(store.state.currentUser.group)) {
     store.commit('setLastURLRequested', to.path);
     next('/access-denied');

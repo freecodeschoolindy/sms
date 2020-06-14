@@ -22,7 +22,11 @@ export default {
       columnData: [
         {
           label: 'Name',
-          field: 'name'
+          field: 'name',
+          linkOptions: {
+            routeName: 'UserDetails',
+            idField: 'id'
+          }
         },
         {
           label: 'Group',
