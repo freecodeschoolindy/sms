@@ -1,5 +1,11 @@
 
 const helpers = {
+  ALLOWED_GROUPS: [
+    'student',
+    'organizer',
+    'volunteer',
+    'admin'
+  ],
   generateTempId: function () {
     let prefix = 'temp';
     let random = Math.random().toString(36).substr(2, 9);

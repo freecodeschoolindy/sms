@@ -5,12 +5,16 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    currentUser: {
-      name: undefined,
-      permissions: {}
-    }
+    currentUser: {},
+    lastURLRequested: null
   },
   mutations: {
+    setCurrentUser: function (state, user) {
+      state.currentUser = user;
+    },
+    setLastURLRequested: function (state, url) {
+      state.lastURLRequested = url;
+    }
   },
   actions: {
   },
