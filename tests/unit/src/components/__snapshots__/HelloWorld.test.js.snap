@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`HelloWorld.vue Renders correctly 1`] = `
-<div class="hello">
-  <h1>Hello World</h1>
-</div>
-`;

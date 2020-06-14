@@ -2,6 +2,6 @@
 
 exports[`Home.vue Renders correctly 1`] = `
 <div class="home">
-  <helloworld-stub></helloworld-stub>
+  <h1>Home</h1>
 </div>
 `;
