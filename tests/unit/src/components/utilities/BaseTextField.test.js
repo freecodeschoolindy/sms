@@ -15,8 +15,8 @@ describe('BaseTextField.vue', () => {
     store = setup.store;
   });
 
-  test('Renders correctly', async () => {
-    const wrapper = await testHelpers.shallowMountWrapper(BaseTextField, {
+  function wrapperOptions () {
+    return {
       localVue,
       store,
       propsData: {
@@ -24,9 +24,28 @@ describe('BaseTextField.vue', () => {
         label: 'label',
         value: 'value'
       }
-    });
+    };
+  }
+
+  test('Renders correctly', async () => {
+    const wrapper = await testHelpers.shallowMountWrapper(BaseTextField, wrapperOptions());
 
     expect(wrapper)
       .toMatchSnapshot();
+  });
+
+  test('Input event to be emitted on change', async () => {
+    const wrapper = await testHelpers.shallowMountWrapper(BaseTextField, wrapperOptions());
+
+    const input = wrapper.find('[data-test="baseTextFieldInput"]');
+    input.setValue('test');
+
+    await wrapper.vm.$nextTick();
+
+    expect(wrapper.emitted().input.length)
+      .toEqual(1);
+
+    expect(wrapper.emitted().input[0])
+      .toEqual(['test']);
   });
 });

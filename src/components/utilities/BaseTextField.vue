@@ -7,7 +7,8 @@
       :name="id"
       :type="type || 'text'"
       :value="value"
-      @input="handleInput"
+      data-test="baseTextFieldInput"
+      @input="$emit('input', $event.target.value)"
       v-on="getListeners"
     />
   </fieldset>
@@ -33,11 +34,6 @@ export default {
     value: {
       type: String,
       default: undefined
-    }
-  },
-  methods: {
-    handleInput: function (event) {
-      this.$emit('input', event.target.value);
     }
   },
   computed: {

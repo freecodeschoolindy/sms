@@ -53,12 +53,12 @@ export default {
         {
           id: 'githubUsername',
           label: 'GitHub Username',
-          placeholder: 'rsanchez',
+          placeholder: 'rsanchez'
         },
         {
           id: 'codepenUsername',
           label: 'CodePen Username',
-          placeholder: 'rsanchez',
+          placeholder: 'rsanchez'
         }
         /*
           Public Profile: Visible to others logged in, maybe to those not logged in?
