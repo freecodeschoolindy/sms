@@ -1,7 +1,11 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import axios from 'axios';
+import router from '../router';
 
 Vue.use(Vuex);
+
+const API_URL = 'http://localhost:8000/api/v1';
 
 export default new Vuex.Store({
   state: {
@@ -17,6 +21,11 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    async login ({ commit }, payload) {
+      const { data } = await axios.post(`${API_URL}/users/login`, payload)
+      commit('setCurrentUser', data);
+      router.replace('/profile')
+    }
   },
   modules: {
   }

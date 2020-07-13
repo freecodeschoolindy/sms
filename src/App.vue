@@ -37,6 +37,10 @@ export default {
         {
           title: 'Users',
           path: '/users'
+        },
+        {
+          title: 'Login',
+          path: '/login'
         }
       ]
     };
