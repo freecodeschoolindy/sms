@@ -7,7 +7,8 @@ const ALLOWED_GROUPS = helpers.ALLOWED_GROUPS;
 
 import AccessDenied from '@/views/AccessDenied.vue';
 import Home from '@/views/Home.vue';
-import Login from '@/views/Login.vue';
+import Login from '@/views/auth/Login.vue';
+import Register from '@/views/auth/Register.vue';
 import UserProfile from '@/views/UserProfile.vue';
 import About from '@/views/About.vue';
 import UsersList from '@/views/UsersList.vue';
@@ -43,6 +44,17 @@ export const routes = [
     path: '/login',
     name: 'Login',
     component: Login,
+    meta: {
+      groups: [
+        ...ALLOWED_GROUPS,
+        'unassigned'
+      ]
+    }
+  },
+  {
+    path: '/register',
+    name: 'Register',
+    component: Register,
     meta: {
       groups: [
         ...ALLOWED_GROUPS,

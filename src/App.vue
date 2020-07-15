@@ -41,6 +41,10 @@ export default {
         {
           title: 'Login',
           path: '/login'
+        },
+        {
+          title: 'Register',
+          path: '/register'
         }
       ]
     };

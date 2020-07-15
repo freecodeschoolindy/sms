@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "axios": "0.19.2",
+    "foundation-sites": "6.6.3",
     "vue": "^2.6.11",
     "vue-good-table": "^2.19.3",
     "vue-router": "^3.2.0",
