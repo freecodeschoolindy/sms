@@ -1,8 +1,14 @@
 <template>
   <div>
     <h1>Login Page</h1>
-    <input v-model="email">
-    <input v-model="password">
+    <label>
+      E-mail:
+      <input v-model="email" type="email" />
+    </label>
+    <label>
+      Password:
+      <input v-model="password" type="password" />
+    </label>
     <button @click="logUserIn">
       Login
     </button>
@@ -10,27 +16,30 @@
 </template>
 
 <script>
-import { mapActions, mapState } from 'vuex'
+import { mapActions, mapState } from 'vuex';
 
 export default {
-  data() {
+  data: function () {
     return {
       email: 'gwen@example.com',
       password: 'hellomotto'
-    }
-  },
-  computed: {
-    ...mapState(['loggedInUser', 'currentUser'])
+    };
   },
   methods: {
     ...mapActions(['login']),
-    logUserIn() {
+    logUserIn: function () {
       const payload = {
         username: this.email,
         password: this.password
-      }
-      this.login(payload)
+      };
+      this.login(payload);
     }
+  },
+  computed: {
+    ...mapState([
+      'currentUser',
+      'loggedInUser'
+    ])
   }
-}
+};
 </script>

@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Register.vue Renders correctly 1`] = `
+<form class="grid-x">
+  <div class="cell small-4 grid-x grid-padding-x">
+    <div class="cell">
+      <h2>Register Page</h2>
+    </div>
+    <div class="cell">
+      <label>
+        Github Username:
+        <input type="text" placeholder="Github Username">
+      </label>
+    </div>
+    <div class="cell">
+      <label>
+        Email:
+        <input type="text" placeholder="Email">
+      </label>
+    </div>
+    <div class="cell">
+      <label>
+        Select Student Status:
+        <select>
+          <option value="current">I am currently a student</option>
+          <option value="former">I am a former student</option>
+          <option value="waitlist">I want to be on the wait list to become a student</option>
+          <option value="other">Other</option>
+        </select>
+      </label>
+    </div>
+    <div class="cell">
+      <label>
+        First Name:
+        <input type="text" placeholder="First Name">
+      </label>
+    </div>
+    <div class="cell">
+      <label>
+        Last Name:
+        <input type="text" placeholder="Last Name">
+      </label>
+    </div>
+    <div class="cell">
+      <label>
+        Preferred Name:
+        <input type="text" placeholder="Preferred Name">
+      </label>
+    </div>
+    <div class="cell">
+      <button class="button">Submit</button>
+    </div>
+  </div>
+</form>
+`;

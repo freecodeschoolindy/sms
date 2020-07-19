@@ -1,7 +1,8 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import axios from 'axios';
-import router from '../router';
+
+import router from '../router/index.js';
 
 Vue.use(Vuex);
 
@@ -21,10 +22,15 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    async login ({ commit }, payload) {
-      const { data } = await axios.post(`${API_URL}/users/login`, payload)
-      commit('setCurrentUser', data);
-      router.replace('/profile')
+    login: function (state, payload) {
+      try {
+        const { data } = await axios.post(`${API_URL}/users/login`, payload)
+        commit('setCurrentUser', data);
+        router.replace('/profile')
+      } catch (err) {
+        // TODO
+        console.log('TODO: Handle error catching', err);
+      }
     }
   },
   modules: {

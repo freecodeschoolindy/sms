@@ -8,6 +8,10 @@ exports[`App.vue Renders correctly 1`] = `
     <a>About</a>
     <span> | </span>
     <a>Users</a>
+    <span> | </span>
+    <a>Login</a>
+    <span> | </span>
+    <a>Register</a>
     <!---->
   </div>
   <div class="wrapper">
