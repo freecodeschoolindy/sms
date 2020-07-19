@@ -23,15 +23,14 @@ export default new Vuex.Store({
   },
   actions: {
     login: function (state, payload) {
-      axios.post(API_URL + 'users/login', payload)
-        .then((response) => {
-          state.commit('setCurrentUser', response.data);
-          router.replace('/profile');
-        })
-        .catch((err) => {
-          // TODO
-          console.log('TODO: Handle error catching', err);
-        });
+      try {
+        const { data } = await axios.post(`${API_URL}/users/login`, payload)
+        commit('setCurrentUser', data);
+        router.replace('/profile')
+      } catch (err) {
+        // TODO
+        console.log('TODO: Handle error catching', err);
+      }
     }
   },
   modules: {
