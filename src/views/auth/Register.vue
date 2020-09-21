@@ -47,7 +47,7 @@
         </label>
       </div>
       <div class="cell">
-        <button class="button" @click="registerUser">Submit</button>
+        <button class="button" @click.prevent="registerUser">Register with Github</button>
       </div>
     </div>
   </form>
