@@ -1,6 +1,6 @@
 # Student Management System - Frontend
 
-[![Build Status](https://travis-ci.com/freecodeschoolindy/sms.svg?branch=master)](https://travis-ci.com/freecodeschoolindy/sms)
+[![Build Status](https://github.com/freecodeschoolindy/sms/workflows/Build%20Status/badge.svg)](https://github.com/freecodeschoolindy/sms/actions?query=workflow%3A%22Build+Status%22+branch%3Amaster)
 
 ## Running locally
 
