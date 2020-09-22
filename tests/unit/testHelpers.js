@@ -7,8 +7,10 @@ import flushPromises from 'flush-promises';
 import { storeConfig } from '@/store/index.js';
 import { routerConfig } from '@/router/index.js';
 
+import error from '@@/mockResponses/error.js';
+
 const helpers = {
-  setupTestVariables: function (setupOptions, permissions) {
+  setupTestVariables: function (permissions) {
     const setupToReturn = {
       localVue: this.setupLocalVue(),
       store: this.setupStore()
@@ -76,6 +78,14 @@ const helpers = {
     await flushPromises();
 
     return wrapper;
+  },
+  urlMapper: function (url, urlMap) {
+    url = url.replace('http://localhost:8000/api/v1', '');
+
+    if (urlMap[url]) {
+      return Promise.resolve(_cloneDeep(urlMap[url]));
+    }
+    return Promise.reject(error);
   }
 };
 

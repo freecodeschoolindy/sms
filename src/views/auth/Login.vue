@@ -1,7 +1,11 @@
 <template>
   <div>
     <h1>Login Page</h1>
-    <button class="button" @click="logUserIn">
+    <button
+      class="button"
+      data-test="loginButton"
+      @click="logUserIn"
+    >
       Github Login
     </button>
   </div>

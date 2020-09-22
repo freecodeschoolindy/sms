@@ -3,16 +3,8 @@
 exports[`Login.vue Renders correctly 1`] = `
 <div>
   <h1>Login Page</h1>
-  <label>
-    E-mail:
-    <input type="email">
-  </label>
-  <label>
-    Password:
-    <input type="password">
-  </label>
-  <button>
-    Login
+  <button class="button">
+    Github Login
   </button>
 </div>
 `;

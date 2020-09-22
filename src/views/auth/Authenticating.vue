@@ -7,7 +7,9 @@ import { mapActions } from 'vuex';
 
 export default {
   methods: {
-    ...mapActions(['login'])
+    ...mapActions([
+      'login'
+    ])
   },
   mounted: function () {
     const authCode = this.$route.query.code;

@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Authenticating.vue Renders correctly 1`] = `<div>Authenticating...</div>`;

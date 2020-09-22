@@ -12,9 +12,9 @@ const github = {
   redirectUri: 'http://localhost:8080/auth/callback'
 };
 
-const API_URL = 'http://localhost:8000/api/v1';
+// const API_URL = 'http://localhost:8000/api/v1';
 
-export default new Vuex.Store({
+export const storeConfig = {
   state: {
     currentUser: {},
     lastURLRequested: null
@@ -33,8 +33,8 @@ export default new Vuex.Store({
       const { data } = await axios.post(github.url, {
         code: authCode
       });
-      const accessToken = JSON.parse(data).access_token;
-      
+      const accessToken = data?.access_token;
+
       const { data: userData } = await axios.get(`https://api.github.com/user?access_token=${accessToken}`);
 
       // call api to save user
@@ -45,7 +45,7 @@ export default new Vuex.Store({
       // call api to save user's profile
       // await axios.post(`${API_URL}/users/${userId}/profile/`, {
       //   email: data.email
-      // }); 
+      // });
 
       commit('setCurrentUser', userData);
 
@@ -53,4 +53,6 @@ export default new Vuex.Store({
     }
   },
   modules: {}
-});
+};
+
+export default new Vuex.Store(storeConfig);

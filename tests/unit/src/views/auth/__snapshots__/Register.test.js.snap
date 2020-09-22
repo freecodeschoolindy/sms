@@ -48,7 +48,7 @@ exports[`Register.vue Renders correctly 1`] = `
       </label>
     </div>
     <div class="cell">
-      <button class="button">Submit</button>
+      <button class="button">Register with Github</button>
     </div>
   </div>
 </form>
