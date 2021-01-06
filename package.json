@@ -14,7 +14,7 @@
     "validate": "npm run lint && npm run sasslint && npm t"
   },
   "dependencies": {
-    "axios": "^0.20.0",
+    "axios": "^0.21.1",
     "foundation-sites": "6.6.3",
     "vue": "^2.6.12",
     "vue-good-table": "^2.21.0",
